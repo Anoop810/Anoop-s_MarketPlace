@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api'
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
 
 class ApiService {
   constructor() {
@@ -34,7 +34,7 @@ class ApiService {
     }
 
     try {
-      const response = await fetch(`${API_URL}${endpoint}`, config)
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, config)
       const data = await response.json()
 
       if (!response.ok) {
@@ -104,7 +104,7 @@ class ApiService {
     console.log('Creating product with token:', token ? 'Token exists' : 'No token')
     
     // For FormData, don't set Content-Type (browser will set it with boundary)
-    const response = await fetch(`${API_URL}/products`, {
+    const response = await fetch(`${API_BASE_URL}/products`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -123,7 +123,7 @@ class ApiService {
 
   async updateProduct(id, formData) {
     const token = this.getToken()
-    const response = await fetch(`${API_URL}/products/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/products/${id}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${token}`,
