@@ -443,7 +443,7 @@ export default function App() {
                         <h4 className="font-medium text-slate-900 truncate">{product.name}</h4>
                         <p className="text-sm text-slate-500 mt-1 line-clamp-2">{product.description}</p>
                         <div className="mt-4 flex items-center justify-between">
-                          <span className="text-lg font-semibold text-slate-900">${product.price}</span>
+                          <span className="text-lg font-semibold text-slate-900">₹{product.price}</span>
                           <button
                             onClick={handleShowAuth}
                             className="px-3 py-1.5 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors"
