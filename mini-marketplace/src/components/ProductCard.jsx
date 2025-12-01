@@ -34,7 +34,7 @@ function ProductCard({ product, onClick }) {
       <div className="p-4">
         <h3 className="font-medium text-slate-900 truncate">{product.name}</h3>
         <p className="text-lg font-semibold text-slate-900 mt-1">
-          ${typeof product.price === 'number' ? product.price.toFixed(2) : product.price || '0.00'}
+          ₹{typeof product.price === 'number' ? product.price.toFixed(2) : product.price || '0.00'}
         </p>
         {product.description && (
           <p className="text-sm text-slate-500 mt-2 line-clamp-2">{product.description}</p>
