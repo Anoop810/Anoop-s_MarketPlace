@@ -125,7 +125,7 @@ function SellerDashboard({ products, session, onAddProduct, onUpdateProduct, onD
           <div className="bg-white p-6 rounded-xl border border-slate-200">
             <p className="text-sm text-slate-500 font-medium">Total Value</p>
             <p className="text-3xl font-bold text-slate-900 mt-2">
-              ${myProducts.reduce((sum, p) => sum + (parseFloat(p.price) || 0), 0).toFixed(2)}
+              ₹{myProducts.reduce((sum, p) => sum + (parseFloat(p.price) || 0), 0).toFixed(2)}
             </p>
           </div>
         </div>
@@ -180,7 +180,7 @@ function SellerDashboard({ products, session, onAddProduct, onUpdateProduct, onD
                 </div>
                 <div>
                   <label className="block text-slate-700 mb-1.5 text-sm font-medium">
-                    Price ($)
+                    Price (₹)
                   </label>
                   <input
                     type="number"
@@ -309,7 +309,7 @@ function SellerDashboard({ products, session, onAddProduct, onUpdateProduct, onD
                   </div>
                   <div className="p-4">
                     <h3 className="font-medium text-slate-900">{product.name}</h3>
-                    <p className="text-lg font-semibold text-slate-900 mt-1">${product.price}</p>
+                    <p className="text-lg font-semibold text-slate-900 mt-1">₹{product.price}</p>
                     <p className="text-sm text-slate-500 mt-2 line-clamp-2">{product.description}</p>
                     <div className="mt-4 flex gap-2">
                       <button 
