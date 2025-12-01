@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || '/api'
+const API_BASE_URL = import.meta.env.VITE_API_URL 
 
 class ApiService {
   constructor() {
@@ -10,11 +10,13 @@ class ApiService {
   }
 
   setToken(token) {
+
     if (token) {
       localStorage.setItem('token', token)
     } else {
       localStorage.removeItem('token')
     }
+  
   }
 
   async request(endpoint, options = {}) {
@@ -34,6 +36,7 @@ class ApiService {
     }
 
     try {
+      console.log('Making request to:', `${API_BASE_URL}${endpoint}`, 'with config:', config)
       const response = await fetch(`${API_BASE_URL}${endpoint}`, config)
       const data = await response.json()
 
