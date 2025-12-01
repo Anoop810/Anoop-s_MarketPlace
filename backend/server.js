@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5000
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
-  "circleminimarketplace.netlify.app"
+  "circleminimarketplace.netlify.app",
+  "https://anoop-s-market-place-n678gjfij-anoop810s-projects.vercel.app/"
 ].filter(Boolean)
 
 const corsOptions = {
