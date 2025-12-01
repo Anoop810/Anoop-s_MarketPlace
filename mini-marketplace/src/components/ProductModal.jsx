@@ -46,7 +46,7 @@ function ProductModal({ product, onClose }) {
                 </span>
               )}
             </div>
-            <p className="text-2xl font-bold text-slate-900">${product.price}</p>
+            <p className="text-2xl font-bold text-slate-900">₹{product.price}</p>
           </div>
           
           <p className="text-slate-600 mt-4">{product.description}</p>
